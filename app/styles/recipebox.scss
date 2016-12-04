@@ -1,0 +1,146 @@
+$headerFont: 'Bree Serif', serif;
+$bodyFont:'Open Sans', sans-serif;
+$headerBgColor:  #111111;
+$headerTextColor: #ddd;
+$parallaxTextColor: #fff;
+$descriptionBgColor: $parallaxTextColor;
+$linkSectionBgColor: $headerTextColor;
+$recipesHeaderColor: #000;
+$errorTextColor: #d9534f;
+
+
+html, body {
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+	font-family: $bodyFont;
+	text-align: center;
+}	
+
+#app {
+	min-height: 100%;
+	height: 100%;
+}
+
+.homePage {
+	margin: 0;
+	padding-bottom: 50px;
+
+	.homeHeader {
+		background-color: $headerBgColor;
+		color:  $headerTextColor;
+		font-family: $headerFont;
+
+		h1 {
+			margin: 0;
+			padding-top: 1.5em;
+			padding-bottom: 1em;
+		}
+
+		h3 {
+			margin: 0;
+			padding-bottom: 2em;	
+		}
+	}
+
+	// parallax is based on http://www.w3schools.com/howto/howto_css_parallax.asp
+	.parallax {
+		background-image: url("../images/table.jpg");
+		height: 400px;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		.parallaxText {
+			position: absolute;
+			margin-top: 180px;
+			left: 0;
+			width: 100%;
+
+			a {
+				font-size: 25px;
+				text-decoration: none;
+				color: $parallaxTextColor;
+			}
+
+			a:hover {
+				color: $headerTextColor
+			}
+		}
+	}
+
+	.description {
+		height: auto;
+		min-height: 200px;
+		background-color: $descriptionBgColor;
+		//keeps text in description's div
+		overflow: auto;
+
+		h4 {
+			padding-top: 3em;
+		}
+
+		.descriptionText {
+			text-align: justify;
+			line-height: 200%;
+			padding: 2em 0 3em 0;
+		}
+	}
+
+	.linkToRecipes {
+		min-height: 100px;
+		height: auto;
+		padding-top: 3em;
+		padding-bottom: 50px;
+		background-color: $linkSectionBgColor;
+
+		.linkButton {
+			margin-top: 1em;
+		}		
+	}
+}
+
+.recipeBox {
+	height: auto;
+	color: $recipesHeaderColor;
+
+	h1 {
+		margin: 0;
+		padding: 1em 0;
+		font-family: $headerFont;
+		text-transform: uppercase;
+	}
+
+	.recipeList {
+	height: auto;
+	min-height: 100%;
+
+		// targets recipe title in Panel header
+		.panel-title > a {
+		cursor: pointer; 
+		cursor: hand; 
+		}	
+
+
+		// mimics Bootsrap's List Item appearance
+		.recipePreparation {
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			margin-bottom: 20px;
+			padding: 10px 15px;
+		}
+
+		.spaceRow {
+			height: 15px;
+		}
+	}
+}
+
+.errorText {
+	color: $errorTextColor;
+}
+
+
+
+
